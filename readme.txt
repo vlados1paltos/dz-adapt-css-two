@@ -1,3 +1,6 @@
+Ссылка на мой сайт:
+https://vlados1paltos.github.io/dz-adapt-css-two/
+
 Теоретическая часть:
 
 1. Объясните, как подключить и использовать flexbox в CSS.
