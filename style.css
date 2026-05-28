@@ -1,0 +1,475 @@
+* {
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 16px;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+
+    line-height: 1.5;
+
+    color: #222;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+.header {
+    padding: 20px 0;
+
+    background: linear-gradient(
+        to right,
+        #346401,
+        #2b5300,
+        #1f3b00
+    );
+}
+
+/* 
+(Основное задание 3.1)
+Добавил свойства align-items: center;, justify-content: space-between; для того, чтобы увидеть
+как они влияют на расположение элементов внутри контейнера.
+*/
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    position: relative;
+}
+
+.header__logo {
+    flex-shrink: 0;
+}
+
+.header__logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__burger {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.header__burger-line {
+    width: 26px;
+    height: 3px;
+
+    background-color: #fff;
+
+    border-radius: 2px;
+}
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+
+    list-style: none;
+}
+
+.header__nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__nav-link:hover {
+    text-decoration: underline;
+}
+
+.main {
+    padding: 60px 0;
+}
+
+.main__container {
+    
+}
+
+/* 
+(Дополнительное задание 1.1)
+Создал сложный адаптивный макет с помощью flexbox.
+На большом экране заголовок, навигация и основной контент
+располагаются в строку.
+*/
+.adaptive-layout {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: #e5e5e5;
+}
+
+.adaptive-layout__header,
+.adaptive-layout__nav,
+.adaptive-layout__content {
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background-color: #346401;
+    color: #fff;
+}
+
+.adaptive-layout__body {
+    display: flex;
+    gap: 20px;
+}
+
+.adaptive-layout__nav {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.adaptive-layout__content {
+    flex: 1;
+}
+
+/* 
+(Основное задание 2.1)
+Применил к контейнеру галереи display: flex;
+*/
+.gallery__container {
+    display: flex;
+
+    gap: 24px; 
+
+    min-height: 400px;
+
+    padding: 20px;
+}
+
+/*
+(Основное задание 2.2)
+Поэксперементировал с различными значениями свойства flex-direction для того, 
+чтобы увидеть, как изменяется расположение элементов.
+Здесь применил flex-direction: row;
+
+Элементы располагаются горизонтально слева направо.
+Это стандартное направление главной оси flexbox.
+*/
+.gallery__container--row {
+    flex-direction: row;
+}
+
+/*
+(Основное задание 2.3)
+Поэксперементировал с различными значениями свойства flex-direction для того, 
+чтобы увидеть, как изменяется расположение элементов.
+Здесь применил flex-direction: column;
+*/
+.gallery__container--column {
+    flex-direction: column;
+}
+
+.gallery {
+    flex: 0 1 calc(25% - 18px);
+}
+
+.gallery__image {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+/* 
+(Задание на эксперименты 1)
+В блоке flex-example я реализовал свойства flex-grow, flex-shrink и flex-basis 
+для разных элементов.
+
+flex-grow:
+Позволяет элементу увеличиваться и занимать свободное пространство
+при увеличении ширины окна браузера.
+
+flex-shrink:
+Определяет, может ли элемент уменьшаться при уменьшении ширины окна браузера.
+Если указать flex-shrink: 0;, элемент не будет сжиматься.
+
+flex-basis:
+Задаёт базовый размер flex-элемента до распределения
+свободного пространства внутри flex-контейнера.
+*/
+.flex-example {
+    display: flex;
+    gap: 20px;
+
+    padding: 20px;
+    margin-bottom: 40px;
+
+    background-color: #e5e5e5;
+}
+
+.flex-example--grow {
+    max-width: 1300px;
+}
+
+.flex-example--shrink {
+    max-width: 500px;
+}
+
+.flex-example__item {
+    flex-basis: 200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    padding: 20px;
+
+    background-color: #346401;
+    color: #fff;
+
+    border-radius: 12px;
+}
+
+.flex-example__item--grow {
+    flex-grow: 2;
+}
+
+.flex-example__item--shrink {
+    flex-shrink: 0;
+    background-color: #933333;
+}
+
+.flex-example__item--basis {
+    flex-basis: 240px;
+}
+/* 
+(Задание на эксперименты 2)
+Реализовал пример с использованием flex-wrap.
+
+Если элементам не хватает места внутри контейнера,
+они автоматически переносятся на новую строку.
+*/
+.flex-wrap-example {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: #e5e5e5;
+}
+
+/*
+Задаю фиксированную ширину элементов,
+чтобы перенос строк был заметен
+при уменьшении ширины окна браузера.
+*/
+.flex-wrap-example__item {
+    width: 220px;
+
+    padding: 40px;
+
+    background-color: #346401;
+    color: #fff;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+/* 
+(Дополнительное задание 2)
+Применил свойство order для изменения порядка отображения элементов.
+
+Это может быть полезно в адаптивной верстке, например:
+На компьютере sidebar может располагаться слева,
+а на мобильных устройствах — переноситься ниже основного контента.
+
+Также order используют для изменения порядка отображения
+элементов навигации, карточек или блоков интерфейса
+без изменения HTML-структуры страницы.
+*/
+.flex-wrap-example__item--order {
+    order: 2;
+}
+
+.footer {
+    padding: 30px 0;
+
+    color: #fff;
+    background-color: #222;
+}
+
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+/* 
+(Основное задание 3.2)
+Добавил свойства align-items: flex-end;, justify-content: center; для того, чтобы увидеть
+как они влияют на расположение элементов внутри контейнера.
+*/
+.footer__list {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    height: 50px;
+    background-color: #933333;
+
+    gap: 20px;
+    list-style: none;
+}
+
+.footer__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__license-text {
+    display: block;
+
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+
+    .header__burger {
+        display: flex;
+    }
+
+    .header__nav {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: linear-gradient(
+            to right,
+            #346401,
+            #2b5300,
+            #1f3b00
+        );
+
+        border-radius: 20px;
+        border: 2px solid #fff;
+    }
+
+    .header__nav--open {
+        display: block;
+    }
+
+    .header__nav-list {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+    /* 
+    (Дополнительное задание 1.2)
+    При уменьшении ширины окна блок превращается
+    в вертикальную компоновку.
+    */
+    .adaptive-layout__body {
+        flex-direction: column;
+    }
+
+    .adaptive-layout__nav {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 24px 0;
+    }
+
+    .footer__container {
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+    .footer__list {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .footer__license-text {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main__container {
+        width: 100%;
+    }
+
+    .header__container,
+    .footer__container {
+        width: 90%;
+    }
+
+    .main {
+        padding: 0;
+    }
+
+    .gallery {
+        margin-top: 0;
+        padding: 24px 16px;
+        background-color: #f2f2f2;
+    }
+
+    .footer {
+        background-color: #111;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 992px) {
+
+    .main {
+        padding: 30px 0;
+    }
+}

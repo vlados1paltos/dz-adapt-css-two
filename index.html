@@ -1,0 +1,203 @@
+<!-- 
+(Основное задание 1)
+Html-документ с контейнером div и несколькими дочерними элементами div в блоке main. 
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Green</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+
+            <div class="header__logo">
+                <a href="#" class="header__logo-link">
+                    Логотип
+                </a>
+            </div>
+            
+            <button class="header__burger" type="button" aria-label="Открыть меню">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Промо</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Новости</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Акции</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Социальные сети</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="adaptive-layout">
+
+            <header class="adaptive-layout__header">
+                Заголовок
+            </header>
+
+            <div class="adaptive-layout__body">
+
+                <aside class="adaptive-layout__nav">
+                     <ul class="adaptive-layout__nav-list">
+                        <li><a href="#">Навигация 1</a></li>
+                        <li><a href="#">Навигация 2</a></li>
+                        <li><a href="#">Навигация 3</a></li>
+                        <li><a href="#">Навигация 4</a></li>
+                    </ul>
+                </aside>
+
+                <section class="adaptive-layout__content">
+                    Основной контент
+                </section>
+
+            </div>
+
+        </div>
+
+        <div class="container main__container">
+
+            <div class="gallery__container gallery__container--row">
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_one.jpg" alt="Зелёные холмы">
+                </div>
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_two.jpg" alt="Зелёные холмы">
+                </div>
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_three.jpg" alt="Зелёные холмы">
+                </div>
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_four.jpg" alt="Зелёные холмы">
+                </div>
+
+            </div>
+
+            <div class="gallery__container gallery__container--column">
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_one.jpg" alt="Зелёные холмы">
+                </div>
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_two.jpg" alt="Зелёные холмы">
+                </div>
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_three.jpg" alt="Зелёные холмы">
+                </div>
+
+                <div class="gallery">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_four.jpg" alt="Зелёные холмы">
+                </div>
+
+            </div>
+
+            <div class="flex-example flex-example--grow">
+                <div class="flex-example__item">Обычный</div>
+                <div class="flex-example__item flex-example__item--grow">Grow</div>
+                <div class="flex-example__item flex-example__item--basis">Basis</div>
+            </div>
+
+            <div class="flex-example flex-example--shrink">
+                <div class="flex-example__item">Обычный</div>
+                <div class="flex-example__item flex-example__item--shrink">Shrink</div>
+                <div class="flex-example__item flex-example__item--basis">Basis</div>
+            </div>
+
+        </div>
+
+        <div class="flex-wrap-example">
+
+            <div class="flex-wrap-example__item">
+                Lorem, ipsum. 1
+            </div>
+
+            <div class="flex-wrap-example__item">
+                Lorem, ipsum. 1
+            </div>
+
+            <div class="flex-wrap-example__item flex-wrap-example__item--order">
+                Lorem, ipsum. 2
+            </div>
+
+            <div class="flex-wrap-example__item">
+                Lorem, ipsum. 2
+            </div>
+
+            <div class="flex-wrap-example__item">
+                Lorem, ipsum. 3
+            </div>
+
+            <div class="flex-wrap-example__item">
+                Lorem, ipsum. 3
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+
+            <nav class="footer__social" aria-label="Социальные сети">
+
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">VK</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">X</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Discord</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">YouTube</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <div class="footer__license">
+                <small class="footer__license-text">
+                    © 2020-2026, компания Company, Inc.
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
